@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Who is owner?",
+  "author": "Ali Barın",
+  "description": "This extension is built for a scrum master colleague",
+  "version": "1.0",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": ["src/scripts/background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["*://*.atlassian.net/*"],
+    "js": ["src/scripts/content.js"]
+  }],
+  "browser_action": {
+    "default_title": "!",
+    "default_icon": "src/images/favicon-16.png"
+  },
+  "icons" : {
+    "128" : "src/images/favicon-128.png",
+    "16" : "src/images/favicon-16.png"
+  }
+}
